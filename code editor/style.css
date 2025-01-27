@@ -1,0 +1,218 @@
+body {
+    height: 100vh;
+    /* background: linear-gradient(135deg, #000111 0%, #000000 100%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+:root {
+    --background-color: #1e1e1e; /* Dark gray background */
+    --text-color: #d4d4d4; /* Light gray text */
+    --keyword-color: #569cd6; /* Light blue for built-in functions and keyword */
+    --string-color: #ce9178; /* Soft orange for strings */
+    --function-color: #dcdcaa; /* Yellow-green for function names */
+    --variable-color: #9cdcfe; /* Light blue for variables */
+    --comment-color: #6a9955; /* Muted green for comments */
+    --error-color: #f44747; /* Red for error messages */
+    --line-number-color: #858585; /* Muted gray for line numbers */
+    --selector-color: #ffcb6b; /* yellow-brown for css selectors */
+    --cursor-color: #aeafad; /* Light gray for cursor */
+    --css-value: #c3e88d;  /* Light green for css value */
+    --curly-braces:#e08bd9 ;  /* purple for curly braces */
+  }
+
+
+.code__section {
+    position: relative;
+    width: 500px;
+    height: 421px;
+    background: linear-gradient(109.61deg, #4C4F5A 4.26%, #202125 84.84%);
+    border-radius: 10px;
+}
+
+ .code__container {
+    position: absolute;
+    width: fit-content;
+    background-color: #162328;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(22, 35, 40, .17), 0 12px 32px rgba(22, 35, 40, .17);
+    }
+
+
+.code__container .navbar{
+    padding: 15px 55px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start
+  }
+  
+ .navbar .controls {
+    flex: 0 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+  
+   .navbar .controls .button {
+    margin-right: 4px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%
+  }
+   .navbar .controls .button:last-child {
+    margin-right: 0
+  }
+  
+   .navbar .controls .button:nth-child(1) {
+    background-color: #fc605b
+  }
+
+   .navbar .controls .button:nth-child(2) {
+    background-color: #fdbc40
+  }
+  
+   .navbar .controls .button:nth-child(3) {
+    background-color: #33c748
+  }
+  
+  
+ .navbar .title {
+    flex: 1 2 auto;
+    text-align: center;
+    font-family: "Source Code Pro", monospace;
+    color: rgba(255, 255, 255, .5)
+}
+
+
+  
+ .code-block .selector {
+    color: var(--selector-color)
+}
+ .code-block .curly{
+    color: var(--curly-braces)
+}
+ .code-block .function{
+    color: var(--function-color)
+} 
+ .code-block .string {
+    color: var(--string-color);
+}
+ .code-block .comment{
+    color: var(--comment-color);
+}
+ .code-block .line__number {
+    opacity: .6;
+    padding-right: 10px;
+    display: inline-block;
+    color: var(--line-number-color)
+}
+ .code-block .built__in {
+    color: var(--keyword-color)
+}
+ .code-block .value{
+    color: var(--css-value);
+}
+ .code-block  .variable{
+    color: var(--variable-color);
+}
+  
+ 
+.code-block {
+        margin: 0 20px 0;
+        padding: 18px 5px 20px;
+        color: var(--text-color); /*#bfc7d5*/
+        font-size: 15px;
+        overflow-x: auto;
+        font-family: "Source Code Pro", monospace
+    }
+  
+ 
+ .animate-1 {
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s 0s steps(30, end) forwards, cursor .5s step-end 0.5s 12 alternate forwards;
+    width: 16ch;
+  }
+
+ .code-block .animate-2 {
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s 6s steps(30, end) forwards, cursor .5s step-end 6s 12 alternate forwards;
+    width: 20ch;
+    visibility: hidden;
+  }
+
+ .code-block .animate-3 {
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s 12s steps(30, end) forwards, cursor .5s step-end 12s 12 alternate forwards;
+    width: 33ch;
+    visibility: hidden;
+  }
+
+ .code-block .animate-4 {
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s 18s steps(30, end) forwards, cursor .5s step-end 18s 12 alternate forwards;
+    width: 19ch;
+    visibility: hidden;
+  }
+ .code-block .animate-5 {
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s 24s steps(10, end) forwards, cursor-blink .5s step-end 24s infinite alternate forwards;
+    width: 6ch;
+    visibility: hidden;
+  }
+
+
+  .code__container:nth-child(1){
+    top: -52px;
+    left: -88px;
+  }
+  .code__container:nth-child(2){
+    top: 97px;
+    right: -48px;
+  }
+  .code__container:nth-child(3){
+    bottom: -23px;
+    left: -88px;
+  }
+
+
+@keyframes typing{
+    from {
+      width:0;
+    }
+    to{
+        visibility: visible;
+    }
+}
+
+@keyframes cursor {
+    0%{
+        border-color: transparent;
+    }
+    50%{
+        
+        border-color: var(--cursor-color);
+    }      
+}
+
+@keyframes  cursor-blink  {
+    0%{
+        border-color: var(--cursor-color);
+    }
+    50%{
+        border-color: transparent;
+        
+    }       
+}
